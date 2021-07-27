@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600&family=Otomanopee+One&display=swap');
+
+
+.footer {
+  background: #df9a18;
+  padding: 0.7rem;
+  height: 10rem;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  position:relative;
+  /* margin:0 auto; */
+}
+.title{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+}
+.text{
+  font-family: 'Mulish', sans-serif;
+
+
+}
+
+.footer p {
+  margin-top: 1rem;
+
+}
+
