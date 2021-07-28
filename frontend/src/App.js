@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import ProductScreen from "./Components/Pages/Product/ProductScreen";
+import Cart from "./Components/Cart/Cart";
 
 
 
@@ -12,6 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
+          <Route path="/cart/:id?" component={Cart} />
           <Route path="/product/:id" exact component={ProductScreen}/>
           <Route path="/" exact component={Home}/>
           {/*<Route path="*" exact component={NotFound}/>*/}
