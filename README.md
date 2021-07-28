@@ -1,6 +1,6 @@
 # ✊🏾GrifAfro
 
-![img](https://drive.google.com/file/d/1jM8GJsj0O1nnu3hR7NY7Aj2O7fh294QI/view?usp=sharing)
+![img](./Logo.jfif)
 
 ## Índice
 
