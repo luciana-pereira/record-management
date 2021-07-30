@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CartActions } from './Actions/CartActions';
+import { CartActions, removeFromCart } from './Actions/CartActions';
 import Message from '../Message/Message'
+import Img from '../../Assets/1.jpeg'
 
 const Cart = (props) => {
     const productId = props.match.params.id;
@@ -21,7 +22,7 @@ const Cart = (props) => {
       }, [dispatch, productId, qtd]);
 
       const removeFromCartHandler = (id) => {
-        
+        dispatch(removeFromCart(id));
       };
     
       const checkoutHandler = () => {
@@ -43,7 +44,7 @@ const Cart = (props) => {
                 <div className="row">
                   <div>
                     <img
-                      src={item.image}
+                      src={Img}
                       alt={item.name}
                       className="small"
                     />

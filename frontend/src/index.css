@@ -180,3 +180,10 @@ img.large {
   font-size: 1.4rem;
   margin-left: 0.2rem;
 }
+.min-30 {
+  min-width: 30rem;
+}
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
