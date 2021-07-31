@@ -18,7 +18,6 @@ const data = {
 
     products: [
       {
-        _id: '1',
         name: 'Vestido Rendado Branco',
         category: 'Vestido',
         image: './Assets/03.jfif',
@@ -30,8 +29,7 @@ const data = {
         description: 'Produto de alta qualidade, feito sob medida.',
       },
       {
-        _id: '2',
-        name: 'Vestido Rendado Branco',
+        name: 'Vestido Rendado Vermelho',
         category: 'Vestido',
         image: './Assets/03.jfif',
         price: 100,
@@ -42,8 +40,7 @@ const data = {
         description: 'Produto de alta qualidade, feito sob medida.',
       },
       {
-        _id: '3',
-        name: 'Vestido Rendado Branco',
+        name: 'Vestido Rendado Roxo',
         category: 'Vestido',
         image: './Assets/03.jfif',
         price: 220,
@@ -54,8 +51,7 @@ const data = {
         description: 'Produto de alta qualidade, feito sob medida.',
       },
       {
-        _id: '4',
-        name: 'Vestido Rendado Branco',
+        name: 'Vestido Rendado Cinza',
         category: 'Vestido',
         image: './Assets/04.jfif',
         price: 78,
@@ -66,8 +62,7 @@ const data = {
         description: 'Produto de alta qualidade, feito sob medida.',
       },
       {
-        _id: '5',
-        name: 'Vestido Rendado Branco',
+        name: 'Vestido Rendado Azul',
         category: 'Vestido',
         image: './Assets/05.jfif',
         price: 65,
@@ -78,8 +73,7 @@ const data = {
         description: 'Produto de alta qualidade, feito sob medida.',
       },
       {
-        _id: '6',
-        name: 'Vestido Rendado Branco',
+        name: 'Vestido Rendado Verde',
         category: 'Vestido',
         image: './Assets/06.jfif',
         price: 139,

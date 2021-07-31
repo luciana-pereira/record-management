@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import data from './data.js';
 import UserRouter from './Router/UserRouter.js';
+import ProductRouter from './Router/ProductRouter.js';
 
 const app = express();
 
@@ -12,20 +13,10 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/grifafro', {
   useCreateIndex: true,
 });
 
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find((x) => x._id === req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
-
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-});
 
 app.use('/api/users', UserRouter);
+
+app.use('/api/products', ProductRouter);
 
 app.get('/', (req, res) => {
   res.send('Server is ready');
