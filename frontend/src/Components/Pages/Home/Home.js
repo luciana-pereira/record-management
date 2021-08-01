@@ -3,7 +3,7 @@ import Product from '../Product/Product';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../Product/Actions/ProductActions';
+import { listProducts } from '../../Actions/ProductActions';
 
 const Home = () => {
   const dispatch = useDispatch();

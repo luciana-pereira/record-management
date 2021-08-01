@@ -6,7 +6,7 @@ export const Badge = () => {
     const { cartItems } = cart;
 
     return (
-        <Link>
+        <Link to="/cart">
             Meus Pedidos 🛍️ 
             {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>

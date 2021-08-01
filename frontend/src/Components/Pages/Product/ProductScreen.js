@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { detailsProduct } from '../Product/Actions/ProductActions';
+import { detailsProduct } from '../../Actions/ProductActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
 import Rating from '../../Rating/Rating';

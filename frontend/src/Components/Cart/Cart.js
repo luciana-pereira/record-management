@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CartActions, removeFromCart } from './Actions/CartActions';
+import { CartActions, removeFromCart } from '../Actions/CartActions';
 import Message from '../Message/Message'
 import Img from '../../Assets/1.jpeg'
 
