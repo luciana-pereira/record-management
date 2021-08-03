@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import ProductScreen from "./Components/Pages/Product/ProductScreen";
 import Cart from "./Components/Cart/Cart";
 import Signin from "./Components/Pages/Signin/Signin";
+import Register from "./Components/Pages/Register/Register";
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/product/:id" exact component={ProductScreen}/>
           <Route path="/" exact component={Home}/>
           <Route path="/signin" exact component={Signin}/>
+          <Route path="/register" exact component={Register}/>
         </Switch>
         <Footer />
       </BrowserRouter>
