@@ -63,7 +63,10 @@ const  Signin = (props) => {
                 <div>
                     <label />
                     <div>
-                        Novo usuario? <Link to="/register">Crie sua conta.</Link>
+                        Novo usuario? 
+                        <Link to={`/register?redirect=${redirect}`}>
+                            Crie sua conta.
+                        </Link>
                     </div>
                 </div>
             </form>
