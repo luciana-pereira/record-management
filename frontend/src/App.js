@@ -7,6 +7,7 @@ import Cart from "./Components/Cart/Cart";
 import Signin from "./Components/Pages/Signin/Signin";
 import Register from "./Components/Pages/Register/Register";
 import Shipping from "./Components/Pages/Shipping/Shipping";
+import Payment from "./Components/Pages/Payment/Payment";
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signin" component={Signin}/>
           <Route path="/register" component={Register}/>
           <Route path="/shipping" component={Shipping}/>
+          <Route path="/payment" component={Payment}/>
         </Switch>
         <Footer />
       </BrowserRouter>
