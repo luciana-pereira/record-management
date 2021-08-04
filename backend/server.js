@@ -17,7 +17,6 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/grifafro', {
   useCreateIndex: true,
 });
 
-
 app.use('/api/users', UserRouter);
 
 app.use('/api/products', ProductRouter);
@@ -31,6 +30,7 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);
 });

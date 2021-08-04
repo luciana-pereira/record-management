@@ -11,7 +11,7 @@ const Rating = (props) => {
                 ? 'fa fa-star-half-o'
                 : 'fa fa-star-o'
             }
-          ></i>
+          />
         </span>
         <span>
           <i
@@ -22,7 +22,7 @@ const Rating = (props) => {
                 ? 'fa fa-star-half-o'
                 : 'fa fa-star-o'
             }
-          ></i>
+          />
         </span>
         <span>
           <i
@@ -33,7 +33,7 @@ const Rating = (props) => {
                 ? 'fa fa-star-half-o'
                 : 'fa fa-star-o'
             }
-          ></i>
+          />
         </span>
         <span>
           <i
@@ -44,7 +44,7 @@ const Rating = (props) => {
                 ? 'fa fa-star-half-o'
                 : 'fa fa-star-o'
             }
-          ></i>
+          />
         </span>
         <span>
           <i
@@ -55,7 +55,7 @@ const Rating = (props) => {
                 ? 'fa fa-star-half-o'
                 : 'fa fa-star-o'
             }
-          ></i>
+          />
         </span>
         <span>{numReviews + ' reviews'}</span>
       </div>

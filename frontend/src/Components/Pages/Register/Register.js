@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { register } from '../../Actions/UserActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
+import Input from '../../Forms/Input';
+import Button from '../../Forms/Button';
+import Error from '../../Helper/Error';
 
 const Register = (props) => {
   const [name, setName] = useState('');
@@ -44,47 +47,40 @@ const Register = (props) => {
         </div>
         {loading && <Loading />}
         {error && <Message variant="danger">{error}</Message>}
-        <div>
-          <label htmlFor="name">Nome</label>
-          <input
-            type="text"
-            id="name"
-            required
-            onChange={(e) => setName(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="password">Senha</label>
-          <input
-            type="password"
-            id="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="confirmPassword">Confirmar senha</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            required
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          ></input>
-        </div>
+        <Input
+          htmlFor="name"
+          label="Nome"
+          type="text"
+          id="name"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Input
+          htmlFor="email"
+          label="Email"
+          type="email"
+          id="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input 
+          htmlFor="password" 
+          label="Senha"
+          type="password"
+          id="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Input 
+          htmlFor="confirmPassword" 
+          label="Confirmar senha"
+          type="password"
+          id="confirmPassword"
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+        <Error error={error} />
         <div>
           <label />
-          <button className="primary" type="submit">
+          <Button type="submit">
             Finalizar cadastro
-          </button>
+          </Button>
         </div>
         <div>
           <label />
