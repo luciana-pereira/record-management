@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { signin } from '../../Actions/UserActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
+import Input from '../../Forms/Input';
+import Button from '../../Forms/Button';
 
 const  Signin = (props) => {
     const [email, setEmail] = useState('');
@@ -34,31 +36,27 @@ const  Signin = (props) => {
                 <div>
                     <h1>Faça seu login</h1>
                 </div>
-                {loading && <Loading></Loading>}
+                {loading && <Loading />}
                 {error && <Message variant="danger">{error}</Message>}
-                <div>
-                    <label htmlFor="email">E-mail</label>
-                    <input
-                        type="email"
-                        id="email"
-                        required
-                        onChange={(e) => setEmail(e.target.value)}
-                    ></input>
-                </div>
-                <div>
-                    <label htmlFor="password">Senha</label>
-                    <input
-                        type="password"
-                        id="password"
-                        required
-                        onChange={(e) => setPassword(e.target.value)}
-                    ></input>
-                </div>
+                <Input
+                    htmlFor="email"
+                    label="E-mail"
+                    type="email"
+                    id="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                    htmlFor="password"
+                    label="Senha"
+                    type="password"
+                    id="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                />
                 <div>
                     <label />
-                    <button className="primary" type="submit">
+                    <Button type="submit">
                         Entrar
-                    </button>
+                    </Button>
                 </div>
                 <div>
                     <label />

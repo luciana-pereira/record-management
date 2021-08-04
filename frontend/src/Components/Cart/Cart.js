@@ -6,37 +6,38 @@ import Message from '../Message/Message'
 import Img from '../../Assets/1.jpeg'
 
 const Cart = (props) => {
-    const productId = props.match.params.id;
-    const qtd = props.location.search
-      ? Number(props.location.search.split('=')[1])
-      : 1;
+  const productId = props.match.params.id;
+  const qtd = props.location.search
+  ? Number(props.location.search.split('=')[1])
+  : 1;
 
-      const cart = useSelector((state) => state.cart);
-      const { cartItems } = cart;
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
-      const dispatch = useDispatch();
-      useEffect(() => {
-        if (productId) {
-          dispatch(CartActions(productId, qtd));
-        }
-      }, [dispatch, productId, qtd]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (productId) {
+      dispatch(CartActions(productId, qtd));
+    }
+  }, [dispatch, productId, qtd]);
 
-      const removeFromCartHandler = (id) => {
-        dispatch(removeFromCart(id));
-      };
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
     
-      const checkoutHandler = () => {
-        props.history.push('/signin?redirect=shipping');
-      };
+  const checkoutHandler = () => {
+    props.history.push('/signin?redirect=shipping');
+  };
 
     return (
       <div className="row top">
         <div className="col-2">
           <h1>Meus Pedidos</h1>
           {cartItems.length === 0 ? (
-          <Message>
-            Carrinho esta vazio. <Link to="/">Bora para as compras?</Link>
-          </Message>
+            <Message>
+              Carrinho esta vazio. 
+              <Link to="/">Bora para as compras?</Link>
+            </Message>
           ) : (
           <ul>
             {cartItems.map((item) => (
