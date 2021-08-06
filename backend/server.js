@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import UserRouter from './Router/UserRouter.js';
 import ProductRouter from './Router/ProductRouter.js';
+import OrderRouter from './Router/OrderRouter.js';
 
 dotenv.config();
 
@@ -20,6 +21,8 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/grifafro', {
 app.use('/api/users', UserRouter);
 
 app.use('/api/products', ProductRouter);
+
+app.use('/api/orders', OrderRouter);
 
 app.get('/', (req, res) => {
   res.send('Server is ready');
