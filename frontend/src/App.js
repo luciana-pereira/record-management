@@ -13,24 +13,24 @@ import PlaceOrder from "./Components/Pages/PlaceOrder/PlaceOrder";
 
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route path="/cart/:id?" component={Cart} />
-          <Route path="/product/:id" component={ProductScreen}/>
-          <Route path="/" exact component={Home}/>
-          <Route path="/signin" component={Signin}/>
-          <Route path="/register" component={Register}/>
-          <Route path="/shipping" component={Shipping}/>
-          <Route path="/payment" component={Payment}/>
-          <Route path="/placeorder" component={PlaceOrder}/>
-        </Switch>
-        <Footer />
-      </BrowserRouter>
-    </div>
-  );
+  	return (
+    	<div>
+      		<BrowserRouter>
+        		<Header />
+        		<Switch>
+          			<Route path="/cart/:id?" component={Cart} />
+          			<Route path="/product/:id" component={ProductScreen}/>
+          			<Route path="/" exact component={Home}/>
+          			<Route path="/signin" component={Signin}/>
+          			<Route path="/register" component={Register}/>
+          			<Route path="/shipping" component={Shipping}/>
+          			<Route path="/payment" component={Payment}/>
+          			<Route path="/placeorder" component={PlaceOrder}/>
+        		</Switch>
+        		<Footer />
+      		</BrowserRouter>
+    	</div>
+  	);
 }
 
 export default App;
