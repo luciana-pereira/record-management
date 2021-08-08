@@ -9,42 +9,41 @@ import { Badge } from '../Badge/Badge';
 
 
 const Header = () => {
+	const userSignin = useSelector((state) => state.userSignin);
+  	const { userInfo } = userSignin;
+  	const dispatch = useDispatch();
 
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-  const dispatch = useDispatch();
+  	const signoutHandler = () => {
+    	dispatch(signout());
+  	};
 
-  const signoutHandler = () => {
-    dispatch(signout());
-  };
-
-  return (
-    <header className={styles.header}>
-      <nav className={`${styles.nav} container`}>
-        <img className="brand" href="/" className={styles.img} src={Logo} />
-        <Link to="/" className={styles.title}>GrifAfro</Link>
-        <div className={styles.options}>
-          <Badge />
-          {userInfo ? (
-            <div className="dropdown">
-              <Link to="#">
-                {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
-              </Link>
-              <ul className="dropdown-content">
-                <li>
-                  <Link to="#signout" onClick={signoutHandler}>
-                    Sair
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <Link to="/signin">Entrar</Link>
-          )}
-        </div>
-      </nav>
-    </header>
-  );
+  	return (
+    	<header className={styles.header}>
+      		<nav className={`${styles.nav} container`}>
+        		<img className="brand" href="/" className={styles.img} src={Logo} />
+        		<Link to="/" className={styles.title}>GrifAfro</Link>
+        		<div className={styles.options}>
+          			<Badge />
+          			{userInfo ? (
+            			<div className="dropdown">
+              				<Link to="#">
+                				{userInfo.name} <i className="fa fa-caret-down"></i>{' '}
+              				</Link>
+              				<ul className="dropdown-content">
+                				<li>
+                  					<Link to="#signout" onClick={signoutHandler}>
+                    					Sair
+                  					</Link>
+                				</li>
+              				</ul>
+            			</div>
+          			) : (
+            			<Link to="/signin">Entrar</Link>
+          			)}
+        		</div>
+      		</nav>
+    	</header>
+  	);
 }
   
 export default Header;

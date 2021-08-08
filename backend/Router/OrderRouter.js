@@ -10,7 +10,7 @@ orderRouter.post(
     isAuth,
     expressAsyncHandler(async (req, res) => {
         if (req.body.orderItems.length === 0) {
-            res.status(400).send({ message: 'Cart is empty' });
+            res.status(400).send({ message: 'Seu carrinho de compras está vazio.' });
         } else {
             const order = new Order({
                 orderItems: req.body.orderItems,
@@ -26,7 +26,7 @@ orderRouter.post(
             const createdOrder = await order.save();
             res
             .status(201)
-            .send({ message: 'New Order Created', order: createdOrder });
+            .send({ message: 'Pedido criado!', order: createdOrder });
         }
     })
 );
@@ -39,7 +39,7 @@ orderRouter.get(
         if (order) {
             res.send(order);
         } else {
-            res.status(404).send({ message: 'Order Not Found' });
+            res.status(404).send({ message: 'Pedido não localizado, tente novamente.' });
         }
     })
   );

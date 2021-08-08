@@ -6,9 +6,9 @@ import {
     ORDER_DETAILS_FAIL,
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_SUCCESS,
-  } from '../Constants/OrderConstants';
+} from '../Constants/OrderConstants';
   
-  export const orderCreateReducer = (state = {}, action) => {
+export const orderCreateReducer = (state = {}, action) => {
     switch (action.type) {
         case ORDER_CREATE_REQUEST:
             return { loading: true };
@@ -21,12 +21,9 @@ import {
         default:
             return state;
     }
-  };
+};
 
-  export const orderDetailsReducer = (
-    state = { loading: true, order: {} },
-    action
-  ) => {
+export const orderDetailsReducer = (state = { loading: true }, action) => {
     switch (action.type) {
         case ORDER_DETAILS_REQUEST:
             return { loading: true };
@@ -37,4 +34,4 @@ import {
         default:
             return state;
     }
-  };
+};

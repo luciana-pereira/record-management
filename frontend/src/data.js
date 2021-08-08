@@ -13,20 +13,20 @@ const data = {
             rating: 4.5,
             numReviews: 10,
             description: 'Produto de alta qualidade, feito sob medida.',
-          },
-          {
+        },
+        {
             _id: '2',
             name: 'Vestido Rendado Branco',
             category: 'Vestido',
-            image: './Assets/03.jfif',
+            image: './Assets/1.jpeg',
             price: 100,
             countInStock: 20,
             brand: 'GrifAfro',
             rating: 4.0,
             numReviews: 10,
             description: 'Produto de alta qualidade, feito sob medida.',
-          },
-          {
+        },
+        {
             _id: '3',
             name: 'Vestido Rendado Branco',
             category: 'Vestido',
@@ -37,8 +37,8 @@ const data = {
             rating: 4.8,
             numReviews: 17,
             description: 'Produto de alta qualidade, feito sob medida.',
-          },
-          {
+        },
+        {
             _id: '4',
             name: 'Vestido Rendado Branco',
             category: 'Vestido',
@@ -49,8 +49,8 @@ const data = {
             rating: 4.5,
             numReviews: 14,
             description: 'Produto de alta qualidade, feito sob medida.',
-          },
-          {
+        },
+        {
             _id: '5',
             name: 'Vestido Rendado Branco',
             category: 'Vestido',
@@ -61,8 +61,8 @@ const data = {
             rating: 4.5,
             numReviews: 10,
             description: 'Produto de alta qualidade, feito sob medida.',
-          },
-          {
+        },
+        {
             _id: '6',
             name: 'Vestido Rendado Branco',
             category: 'Vestido',
@@ -73,7 +73,8 @@ const data = {
             rating: 4.5,
             numReviews: 15,
             description: 'Produto de alta qualidade, feito sob medida.',
-          },
+        },
     ],
-  };
-  export default data;
+};
+
+export default data;
