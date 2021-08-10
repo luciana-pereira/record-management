@@ -10,6 +10,7 @@ import Shipping from "./Components/Pages/Shipping/Shipping";
 import Payment from "./Components/Pages/Payment/Payment";
 import PlaceOrder from "./Components/Pages/PlaceOrder/PlaceOrder";
 import Order from "./Components/Pages/Order/Order";
+import OrderHistory from "./Components/Pages/Order/OrderHistory";
 
 function App() {
   	return (
@@ -26,6 +27,7 @@ function App() {
           			<Route path="/payment" component={Payment}/>
           			<Route path="/placeorder" component={PlaceOrder}/>
 					<Route path="/order/:id" component={Order}/>
+					<Route path="/orderhistory" component={OrderHistory}/>
         		</Switch>
         		<Footer />
       		</BrowserRouter>
