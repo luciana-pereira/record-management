@@ -30,6 +30,11 @@ const Header = () => {
                 				{userInfo.name} <i className="fa fa-caret-down"></i>{' '}
               				</Link>
               				<ul className="dropdown-content">
+							  	<li>
+                  					<Link to="/orderhistory" onClick={signoutHandler}>
+										Histórico de pedidos
+                  					</Link>
+                				</li>
                 				<li>
                   					<Link to="#signout" onClick={signoutHandler}>
                     					Sair
