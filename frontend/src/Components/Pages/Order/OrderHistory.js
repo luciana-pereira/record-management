@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listOrderMine } from '../actions/orderActions';
+import { listOrderMine } from '../../Actions/OrderActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
 import Button from '../../Forms/Button'
