@@ -20,7 +20,7 @@ de uma _API rest_ que e compatível com as requisições vindas do front.
 
 ## 2. Resumo do projeto
 
-Front-end, realizamos a construção da interface do site e-commerce onde estão dispostos os produtos oferecidos.
+Front-end, foi realizado a construção da interface do site e-commerce onde estão dispostos os produtos oferecidos.
 
 Back-end, nesse caso nos referimos a um _servidor web_, que é basicamente
 um programa que _ouve_ o que acontece na aplicação através de uma porta de rede,
