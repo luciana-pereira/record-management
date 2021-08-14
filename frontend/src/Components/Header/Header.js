@@ -50,6 +50,32 @@ const Header = () => {
           			) : (
             			<Link to="/signin">Entrar</Link>
           			)}
+					{userInfo && userInfo.isAdmin && (
+              			<div className="dropdown">
+                			<Link to="#admin">
+                  				Administrativo <i className="fa fa-caret-down"></i>
+                			</Link>
+                			<ul className="dropdown-content">
+                  				<li>
+                    				<Link to="/dashboard">Painel</Link>
+                  				</li>
+                  				<li>
+                    				<Link to="/productlist">Produtos</Link>
+                  				</li>
+                  				<li>
+                    				<Link to="/orderlist">Pedidos</Link>
+                  				</li>
+                  				<li>
+                    				<Link to="/userlist">Usuarios</Link>
+                  				</li>
+								<li>
+                  					<Link to="#signout" onClick={signoutHandler}>
+                    					Sair
+                  					</Link>
+                				</li>
+                			</ul>
+              			</div>
+            		)}
         		</div>
       		</nav>
     	</header>
