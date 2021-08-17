@@ -13,6 +13,8 @@ import Order from "./Components/Pages/Order/Order";
 import OrderHistory from "./Components/Pages/Order/OrderHistory";
 import Profile from "./Components/Pages/Profile/Profile";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import AdminRoute from "./Components/AdminRoute/AdminRoute";
+import ProductList from "./Components/Pages/Product/ProductList";
 
 function App() {
   	return (
@@ -31,6 +33,7 @@ function App() {
 					<Route path="/order/:id" component={Order}/>
 					<Route path="/orderhistory" component={OrderHistory}/>
 					<PrivateRoute path="/profile" component={Profile}/>
+					<AdminRoute path="/productlist" component={ProductList}/>
         		</Switch>
         		<Footer />
       		</BrowserRouter>
