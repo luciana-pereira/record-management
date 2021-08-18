@@ -1,22 +1,48 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../../Actions/ProductActions';
+import { createProduct, listProducts } from '../../Actions/ProductActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
+import { PRODUCT_CREATE_RESET } from '../../Constants/ProductConstants'
+import Button from '../../Forms/Button';
 
 const ProductList = (props) => {
     const productList = useSelector((state) => state.productList);
     const { loading, error, products } = productList;
+    const productCreate = useSelector((state) => state.productCreate);
+
+    const {
+      loading: loadingCreate,
+      error: errorCreate,
+      success: successCreate,
+      product: createdProduct,
+    } = productCreate;
+
     const dispatch = useDispatch();
     useEffect(() => {
+        if (successCreate) {
+            dispatch({ type: PRODUCT_CREATE_RESET });
+            props.history.push(`/product/${createdProduct._id}/edit`);
+        }
         dispatch(listProducts());
-    }, [dispatch]);
+    }, [createdProduct, dispatch, props.history, successCreate]);
 
     const deleteHandler = () => {};
 
+    const createHandler = () => {
+        dispatch(createProduct());
+      };
+
     return (
         <div>
-            <h1>Produtos</h1>
+            <div className="row">
+                <h1>Produto</h1>
+                <Button type="button" className="primary" onClick={createHandler}>
+                    Criar Produto
+                </Button>
+            </div>
+            {loadingCreate && <Loading />}
+            {errorCreate && <Message variant="danger">{errorCreate}</Message>}
             {loading ? (
                 <Loading />
             ) : error ? (
