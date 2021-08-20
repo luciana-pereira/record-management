@@ -15,6 +15,7 @@ import Profile from "./Components/Pages/Profile/Profile";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AdminRoute from "./Components/AdminRoute/AdminRoute";
 import ProductList from "./Components/Pages/Product/ProductList";
+import ProductEdit from "./Components/Pages/Product/ProductEdit";
 
 function App() {
   	return (
@@ -32,6 +33,7 @@ function App() {
           			<Route path="/placeorder" component={PlaceOrder}/>
 					<Route path="/order/:id" component={Order}/>
 					<Route path="/orderhistory" component={OrderHistory}/>
+					<Route path="/product/:id/edit" component={ProductEdit}/>
 					<PrivateRoute path="/profile" component={Profile}/>
 					<AdminRoute path="/productlist" component={ProductList}/>
         		</Switch>
