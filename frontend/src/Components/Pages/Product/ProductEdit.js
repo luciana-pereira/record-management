@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailsProduct } from '../../Actions/ProductActions';
+import { detailsProduct, updateProduct } from '../../Actions/ProductActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
 import Input from '../../Forms/Input';
 import Button from '../../Forms/Button';
+import { PRODUCT_UPDATE_RESET } from '../../Constants/ProductConstants';
 
 const ProductEdit = (props) => {
     const productId = props.match.params.id;
@@ -18,10 +19,23 @@ const ProductEdit = (props) => {
 
     const productDetails = useSelector((state) => state.productDetails);
     const { loading, error, product } = productDetails;
+
+    const productUpdate = useSelector((state) => state.productUpdate);
+    const {
+        loading: loadingUpdate,
+        error: errorUpdate,
+        success: successUpdate,
+    } = productUpdate;
+
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!product || product._id !== productId) {
+        if (successUpdate) {
+            props.history.push('/productlist');
+        }
+
+        if (!product || product._id !== productId || successUpdate) {
+            dispatch({ type: PRODUCT_UPDATE_RESET });
             dispatch(detailsProduct(productId));
         } else {
             setName(product.name);
@@ -32,10 +46,22 @@ const ProductEdit = (props) => {
             setBrand(product.brand);
             setDescription(product.description);
         }
-    }, [product, dispatch, productId]);
+    }, [product, dispatch, productId, successUpdate, props.history]);
 
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(
+            updateProduct({
+                _id: productId,
+                name,
+                price,
+                image,
+                category,
+                brand,
+                countInStock,
+                description,
+            })
+        );
     };
 
     return (
@@ -44,6 +70,8 @@ const ProductEdit = (props) => {
                 <div>
                     <h1>Edite o Produto {productId}</h1>
                 </div>
+                {loadingUpdate && <Loading />}
+                {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
                 {loading ? (
                     <Loading />
                 ) : error ? (
