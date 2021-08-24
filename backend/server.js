@@ -2,9 +2,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import path from 'path';
 import UserRouter from './Router/UserRouter.js';
 import ProductRouter from './Router/ProductRouter.js';
 import OrderRouter from './Router/OrderRouter.js';
+import UploadRouter from './Router/UploadRouter.js';
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/grifafro', {
   	useCreateIndex: true,
 });
 
+app.use('/api/uploads', UploadRouter);
+
 app.use('/api/users', UserRouter);
 
 app.use('/api/products', ProductRouter);
@@ -27,6 +31,10 @@ app.use('/api/orders', OrderRouter);
 app.get('/api/config/paypal', (req, res) => {
   	res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
+
+const __dirname = path.resolve();
+
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 app.get('/', (req, res) => {
   	res.send('Server is ready');

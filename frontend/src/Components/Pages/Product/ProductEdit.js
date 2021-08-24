@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Axios from 'axios';
 import { detailsProduct, updateProduct } from '../../Actions/ProductActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
@@ -64,6 +65,32 @@ const ProductEdit = (props) => {
         );
     };
 
+    const [loadingUpload, setLoadingUpload] = useState(false);
+    const [errorUpload, setErrorUpload] = useState('');
+  
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignin;
+    const uploadFileHandler = async (e) => {
+        const file = e.target.files[0];
+        const bodyFormData = new FormData();
+        bodyFormData.append('image', file);
+        setLoadingUpload(true);
+        try {
+            const { data } = await Axios.post('/api/uploads', bodyFormData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            });
+
+            setImage(data);
+            setLoadingUpload(false);
+        } catch (error) {
+            setErrorUpload(error.message);
+            setLoadingUpload(false);
+        }
+    };
+
     return (
         <div>
             <form className="form" onSubmit={submitHandler}>
@@ -107,6 +134,19 @@ const ProductEdit = (props) => {
                                 value={image}
                                 onChange={(e) => setImage(e.target.value)}
                             />
+                        </div>
+                        <div>
+                            <Input
+                                htmlFor="imageFile"
+                                type="file"
+                                id="imageFile"
+                                label="Choose Image"
+                                onChange={uploadFileHandler}
+                            />
+                            {loadingUpload && <Loading />}
+                            {errorUpload && (
+                                <Message variant="danger">{errorUpload}</Message>
+                            )}
                         </div>
                         <div>
                             <Input
