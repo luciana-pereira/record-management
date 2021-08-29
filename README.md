@@ -38,7 +38,7 @@ Como implentação futura, pretendo realizar o desenvolvimento:
 * Criar a documentação da API.
 * Testes unitários para cada função.
 * Testes _"end to end"_ ou _e2e_ (de uma ponta a outra).
-*Implementar novas formas de pagamento.
+* Implementar novas formas de pagamento.
 
 ## 4. Desenvolvedora
 
