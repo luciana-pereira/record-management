@@ -15,8 +15,7 @@ A GrifAfro, que está crescendo, necessita de um
 sistema para realizar inventário dos produtos e dados dos clientes.
 
 A interface front-end da aplicação em desenvolvimento, consiste em um site e-commerce de roupas.
-Com a criação do back-end, temos a facilidade de realizar o manejamento dos dados. Realizado através
-de uma _API rest_ que e compatível com as requisições vindas do front.
+Com a criação do back-end, temos a facilidade de realizar o manejamento dos dados. 
 
 ## 2. Resumo do projeto
 
@@ -36,10 +35,10 @@ e o servidor é o programa que recebe essas requisições e as responde.
 Como implentação futura, pretendo realizar o desenvolvimento: 
 * Desenvolvimento de novas funcionalidades
 * Middleware de erros
-* Outros endpoints
-* Criar a documentação da API
-* Testes unitários para cada função
-* Testes _"end to end"_ ou _e2e_ (de uma ponta a outra)
+* Criar a documentação da API.
+* Testes unitários para cada função.
+* Testes _"end to end"_ ou _e2e_ (de uma ponta a outra).
+*Implementar novas formas de pagamento.
 
 ## 4. Desenvolvedora
 
