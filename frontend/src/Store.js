@@ -1,9 +1,9 @@
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { CartReducer } from './Components/Reducers/CartReducers';
-import { productDeleteReducer, productDetailsReducer, productListReducer, productCreateReducer, productUpdateReducer, orderDeliverReducer } from './Components/Reducers/ProductReducers';
+import { productDeleteReducer, productDetailsReducer, productListReducer, productCreateReducer, productUpdateReducer } from './Components/Reducers/ProductReducers';
 import { userSigninReducer, userRegisterReducer, userDetailsReducer, userUpdateProfileReducer } from './Components/Reducers/UserReducers';
-import { orderCreateReducer, orderDetailsReducer, orderPayReducer, orderMineListReducer,  orderListReducer, orderDeleteReducer } from './Components/Reducers/OrderReducers'
+import { orderCreateReducer, orderDetailsReducer, orderPayReducer, orderMineListReducer,  orderListReducer, orderDeleteReducer, orderDeliverReducer } from './Components/Reducers/OrderReducers'
 
 const initialState = {
   	userSignin: {

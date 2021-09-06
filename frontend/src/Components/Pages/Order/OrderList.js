@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listOrders, deleteOrder } from '../../Actions/OrderActions';
 import Loading from '../../Loading/Loading';
 import Message from '../../Message/Message';
-import { ORDER_DELETE_RESET } from '../constants/orderConstants';
+import { ORDER_DELETE_RESET } from '../../Constants/OrderConstants';
 
 const OrderList = (props) => {
     const orderList = useSelector((state) => state.orderList);
@@ -19,11 +19,12 @@ const OrderList = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch({ type: ORDER_DELETE_RESET });
         dispatch(listOrders());
     }, [dispatch, successDelete]);
 
     const deleteHandler = (order) => {
-        if (window.confirm('Are you sure to delete?')) {
+        if (window.confirm('Você tem certeza que quer deletar?')) {
             dispatch(deleteOrder(order._id));
         }
     };
