@@ -7,6 +7,7 @@ import Message from '../../Message/Message';
 import Input from '../../Forms/Input';
 import Button from '../../Forms/Button';
 
+
 const  Signin = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -31,7 +32,7 @@ const  Signin = (props) => {
     }, [props.history, redirect, userInfo]);
     
     return (
-        <div>
+        <div className="form">
             <form className="form" onSubmit={submitHandler}>
                 <div>
                     <h1>Faça seu login</h1>
