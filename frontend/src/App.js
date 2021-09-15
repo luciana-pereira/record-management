@@ -1,7 +1,5 @@
 import Home from "./Components/Pages/Home/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
 import ProductScreen from "./Components/Pages/Product/ProductScreen";
 import Cart from "./Components/Cart/Cart";
 import Signin from "./Components/Pages/Signin/Signin";
@@ -22,7 +20,6 @@ function App() {
   	return (
     	<div>
       		<BrowserRouter>
-        		<Header />
         		<Switch>
           			<Route path="/cart/:id?" component={Cart} />
           			<Route path="/product/:id" exact component={ProductScreen}/>
@@ -39,7 +36,6 @@ function App() {
 					<AdminRoute path="/productlist" component={ProductList}/>
 					<AdminRoute path="/orderlist" component={OrderList}/>
         		</Switch>
-        		<Footer />
       		</BrowserRouter>
     	</div>
   	);
